@@ -53,14 +53,14 @@ Notes:
 
 ## Quickstart
 
-1. Authenticate
+### 1. Authenticate
 
 - `mjctl auth login --email you@example.com`
 - Enter the code from your email.
 - Check status (optionally):
   - `mjctl auth status`
 
-1. Create a profile
+### 2. Create a profile
 
 - Create an empty profile (provide title only):
   - `mjctl profiles create --title "Senior Front-End Developer"`
@@ -72,7 +72,7 @@ Notes:
   - `mjctl profiles save ./profile-<ID>.yaml -y`
 - Consider creating multiple profiles, each tailored for a specific role or skill set.
 
-1. Set location
+### 3. Set location
 
 - Auto-detect by IP using [ip2location.com](https://www.ip2location.com/):
   - `mjctl location set --detect`
