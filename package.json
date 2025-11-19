@@ -10,6 +10,25 @@
     "url": "https://github.com/mirajobs/mjctl/issues"
   },
   "homepage": "https://github.com/mirajobs/mjctl#readme",
+  "keywords": [
+    "cli",
+    "command-line",
+    "job search",
+    "anonymous job search",
+    "tech job search",
+    "tech jobs",
+    "tech careers",
+    "mirajobs",
+    "jobs",
+    "recruiting",
+    "tech recruiting",
+    "resume",
+    "privacy",
+    "typescript",
+    "node",
+    "yaml",
+    "pdf"
+  ],
   "bin": {
     "mjctl": "bin/mjctl"
   },
