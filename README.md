@@ -1,14 +1,13 @@
 # mjctl — MiraJobs CLI
 
-A CLI tool for tech job seekers to discreetly manage their MiraJobs account from the terminal and
-explore new opportunities without risking their current role.
+A CLI tool for tech job seekers to discreetly manage their MiraJobs account from the terminal and explore new opportunities without risking their current role, powered by AI.
 
 You never know when the next wave of layoffs will come, so why not create an anonymous profile and
 let recruiters "apply" to you?
 
 ## How it works
 
-1. Create an anonymous job seeker profile directly from your terminal.
+1. Create an anonymous job seeker profile directly from your terminal. AI is here to help.
 2. Recruiters contact you with job proposals.
 3. If a proposal interests you, reveal your identity and proceed as usual.
 

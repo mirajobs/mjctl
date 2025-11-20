@@ -1,6 +1,6 @@
 {
   "name": "mjctl",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "type": "module",
   "repository": {
     "type": "git",
@@ -41,7 +41,13 @@
     "typescript",
     "node",
     "yaml",
-    "pdf"
+    "pdf",
+    "ai",
+    "ai recruiting",
+    "ai-recruiting",
+    "generative ai",
+    "generative-ai",
+    "gen-ai"
   ],
   "bin": {
     "mjctl": "bin/mjctl"
