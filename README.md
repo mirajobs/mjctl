@@ -152,6 +152,18 @@ Variables can be stored in `.env` file. See src/lib/config.ts for defaults.
 - Build: `npm run build` (outputs to `dist/`)
 - Test: `npm test` (Vitest)
 
+The `dev` script executes `src/main.ts` directly via `tsx`, so you do not need to compile before trying commands. Pass CLI arguments after `--` so they reach the program unchanged:
+
+```bash
+npm run dev -- auth login --email you@example.com
+```
+
+Alternatively, using npx:
+
+```bash
+npx tsx src/main.ts auth status
+```
+
 ## License
 
 MIT — see LICENSE.
