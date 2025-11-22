@@ -17,11 +17,36 @@ function color(s: string, code: number) {
 
 function joinArgs(args: unknown[]) {
   return args.map((a) => {
-    if (typeof a === "string") return a;
     try {
-      return JSON.stringify(a);
+      // Fast path for strings
+      if (typeof a === "string") return a;
+
+      // Preserve rich Error output (stack or name/message)
+      if (a instanceof Error) return formatError(a);
+
+      // Use custom toString when defined (and not the base Object implementation)
+      if (a != null && typeof a === "object") {
+        const ts = (a as any).toString;
+        if (typeof ts === "function" && ts !== Object.prototype.toString) {
+          const str = ts.call(a);
+          if (typeof str === "string" && str.length) return str;
+        }
+      }
+
+      // Primitive types (number, boolean, bigint, symbol)
+      if (typeof a === "number" || typeof a === "boolean" || typeof a === "bigint" || typeof a === "symbol") {
+        return String(a);
+      }
+
+      // Attempt JSON serialization; fall back to String()
+      const json = JSON.stringify(a);
+      return json !== undefined ? json : String(a);
     } catch {
-      return String(a);
+      try {
+        return String(a);
+      } catch {
+        return "[Unprintable]";
+      }
     }
   }).join(" ");
 }
@@ -29,6 +54,8 @@ function joinArgs(args: unknown[]) {
 // Format unknown errors (Error, string, or anything) into a readable string for logging.
 export function formatError(err: unknown): string {
   if (err instanceof Error) {
+    if (typeof(err.toString) === "function") return err.toString(); 
+    
     // Avoid duplicating the message: stack already starts with `Error: message`
     if (err.stack) return err.stack;
     const name = err.name || "Error";
