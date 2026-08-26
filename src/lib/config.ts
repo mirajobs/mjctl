@@ -11,7 +11,7 @@ export const cfg = {
   appName: APP_NAME,
   version: APP_VERSION,
   apiBase: process.env[`${ENV_PREFIX}_API_URL`] ?? "https://mirajobs.com",
-  apiClientId: APP_NAME,
+  apiClientId: "agent",
   apiBasicAuthUser: process.env[`${ENV_PREFIX}_API_USER`] ?? "",
   apiBasicAuthPassword: process.env[`${ENV_PREFIX}_API_PASSWORD`] ?? "",
   apiMaxAttempts: 5,
