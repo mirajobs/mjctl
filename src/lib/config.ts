@@ -3,7 +3,7 @@ import process from "node:process";
 dotenv.config();
 
 const APP_NAME = "mjctl";
-const APP_VERSION = "0.1.8";
+const APP_VERSION = "0.1.9";
 
 const ENV_PREFIX = APP_NAME.toUpperCase();
 
@@ -11,7 +11,7 @@ export const cfg = {
   appName: APP_NAME,
   version: APP_VERSION,
   apiBase: process.env[`${ENV_PREFIX}_API_URL`] ?? "https://mirajobs.com",
-  apiClientId: "agent",
+  apiClientId: APP_NAME,
   apiBasicAuthUser: process.env[`${ENV_PREFIX}_API_USER`] ?? "",
   apiBasicAuthPassword: process.env[`${ENV_PREFIX}_API_PASSWORD`] ?? "",
   apiMaxAttempts: 5,
