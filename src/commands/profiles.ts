@@ -168,7 +168,7 @@ profiles
     "-f, --force",
     "Overwrite existing file",
   )
-  .action(async (opts: LoadOpts, identifier: string) => {
+  .action(async (identifier: string, opts: LoadOpts) => {
     try {
       const profile: Profile | null = await api.getProfile(identifier);
       if (!profile) {
@@ -210,7 +210,7 @@ profiles
     "-y, --yes",
     "Skip confirmation",
   )
-  .action(async (opts: SaveOpts, fileOrId: string) => {
+  .action(async (fileOrId: string, opts: SaveOpts) => {
     try {
       const input = fileOrId;
       const filePath = /^[A-Za-z0-9]+$/.test(input)
@@ -292,7 +292,7 @@ profiles
     "-y, --yes",
     "Skip confirmation",
   )
-  .action(async (opts: DeleteOpts, identifier: string) => {
+  .action(async (identifier: string, opts: DeleteOpts) => {
     try {
       if (!opts.yes) {
         const ok = await Confirm.prompt({ message: `Delete profile ${identifier}?` });

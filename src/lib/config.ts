@@ -3,7 +3,7 @@ import process from "node:process";
 dotenv.config();
 
 const APP_NAME = "mjctl";
-const APP_VERSION = "0.1.0";
+const APP_VERSION = "0.1.8";
 
 const ENV_PREFIX = APP_NAME.toUpperCase();
 
