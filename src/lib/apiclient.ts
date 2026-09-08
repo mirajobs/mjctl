@@ -4,6 +4,7 @@ import { deleteTokens, loadTokens } from "./keychain";
 import { log } from "./log";
 import { Buffer } from "node:buffer";
 import process from "node:process";
+import { randomUUID } from "node:crypto";
 import type { StoredTokens, TokenResponse } from "./types";
 
 const BUILD_INFO = {
@@ -104,7 +105,7 @@ export class ApiClient {
   private buildHeadersWithIdempotencyKey(headers: Record<string, string>) {
     const headersWithIdempotency = { ...headers };
     if (!headersWithIdempotency["Idempotency-Key"]) {
-      headersWithIdempotency["Idempotency-Key"] = crypto.randomUUID();
+      headersWithIdempotency["Idempotency-Key"] = randomUUID();
     }
     return headersWithIdempotency;
   }

@@ -4,6 +4,7 @@
 
 import * as path from "node:path";
 import { promises as fs } from "node:fs";
+import { webcrypto as crypto } from "node:crypto";
 // Lazy-load pdfjs so we only pay the cost when redacting PDFs.
 async function loadPdfJs(): Promise<PdfjsLike> {
   // Resolve via package.json dependency (node_modules) to satisfy lint rules.

@@ -4,6 +4,7 @@ import { promises as fs, readFileSync } from "node:fs";
 import os from "node:os";
 import process from "node:process";
 import { Buffer } from "node:buffer";
+import { webcrypto as crypto } from "node:crypto";
 import { log } from "./log";
 
 // Derive a stable machine-specific passphrase (used when cfg.keychainPassphrase is empty)
